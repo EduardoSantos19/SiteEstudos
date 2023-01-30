@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC 
+"-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<?php 
+/* esse bloco de código em php verifica se existe a sessão, pois o usuário pode
+ simplesmente não fazer o login e digitar na barra de endereço do seu navegador 
+o caminho para a página principal do site (sistema), burlando assim a obrigação de 
+fazer um login, com isso se ele não estiver feito o login não será criado a session, 
+então ao verificar que a session não existe a página redireciona o mesmo
+ para a index.php.*/
+session_start();
+if((!isset ($_SESSION['nome']) == true) and (!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
+{
+  unset($_SESSION['nome']);
+  unset($_SESSION['email']);
+  unset($_SESSION['senha']);
+  header('location:login.php');
+  }
+ 
+$logado = $_SESSION['email'];
+?>
+<html lang="en">
+
+  <head>
+	<link rel="icon" href="logoSite.png" type="image/x-icon" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SimplesFica</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">SimplesFica!</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="Sobre.html">Sobre</a>
+            </li>
+			<li class="nav-item">
+				<a class="nav-link" href="provas.html">Provas e Gabaritos</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="alta.html">Em Alta</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="redaçao.html">Redação</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="login.php">Sair</a>
+            </li>
+			
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Pagina Cima -->
+    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>SimplesFica</h1>
+              <span class="subheading"> Simplifica que SimplesFica! </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Principal -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+		<div class="post-preview">
+            <div class="post-preview">
+            <a href="https://www1.folha.uol.com.br/educacao/2018/11/quem-estudou-pouco-para-a-fuvest-deve-focar-temas-que-mais-caem-na-1a-fase.shtml" target="_blank">
+              <h2 class="post-title">
+              Quem estudou pouco para a Fuvest deve focar temas que mais caem na 1ª fase
+              </h2>
+              <h3 class="post-subtitle">
+                Resolver provas de anos anteriores é mais eficiente do que tentar aprender conteúdos novos na reta final
+              </h3>
+            </a>
+            <p class="post-meta">Postado por
+              <a href="https://www.folha.uol.com.br/" target="_blank">Folha de S.Paulo</a>
+              em 3 de Novembro de 2018</p>
+          <div class="post-preview">
+          <hr>
+          <div class="post-preview">
+            <a href="https://g1.globo.com/educacao/enem/2018/noticia/2018/11/01/enem-2018-declaracao-de-comparecimento-deve-ser-impressa-pelos-candidatos.ghtml" target="_blank">
+              <h2 class="post-title">
+                Enem 2018: 'declaração de comparecimento' deve ser impressa pelos candidatos
+              </h2>
+			  <h3 class="post-subtitle">
+			  Documento deve ser impresso e entregue para o fiscal da sala assinar. Primeiro dia do exame será 4 de novembro.
+              </h3>
+			</a>
+            <p class="post-meta">Postado por
+              <a href="https://g1.globo.com/" target="_blank">G1</a>
+              em 1 de Novembro de 2018 </p>
+          </div>
+          <hr>
+          <a href="https://g1.globo.com/educacao/enem/2018/noticia/2018/10/22/dois-milhoes-de-candidatos-do-enem-2018-ja-acessaram-local-de-provas-no-cartao-de-confirmacao.ghtml" target="_blank">
+              <h2 class="post-title">
+                Dois milhões de candidatos do Enem 2018 já acessaram local de provas no cartão de confirmação
+              </h2>
+              <h3 class="post-subtitle">
+Número representa cerca de um terço do total de candidatos; cartão foi liberado na manhã desta segunda e pode ser acessado pela internet; exame acontece nos dias 4 e 11 de novembro.              </h3>
+            </a>
+            <p class="post-meta">Postado por 
+              <a href="https://g1.globo.com/" target="_blank">G1</a>
+              em 22 de Outubro de 2018</p>
+			</div>
+          </div>
+			<hr>
+				<a href="https://g1.globo.com/sp/sao-paulo/noticia/2018/10/16/fatec-abre-inscricoes-para-vestibular-2019.ghtml" target="_blank">
+              <h2 class="post-title">
+                Fatec abre inscrições para vestibular 2019
+              </h2>
+			  <h3 class="post-subtitle">
+			  Vestibular para 14.845 vagas em 77 cursos de tecnologia ocorre em 9 de dezembro.
+              </h3>
+			</a>
+            <p class="post-meta">Postado por
+              <a href="https://g1.globo.com/" target="_blank">G1</a>
+              em 16 de Outubro de 2018 </p>
+          </div>		  
+          <hr>
+          <!-- Pager -->
+          <div class="clearfix">
+            <a class="btn btn-primary float-right" href="#">Posts Antigos &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="#">
+                  </ul>
+            <p class="copyright text-muted">Copyright &copy; SimplesFica 2018</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
